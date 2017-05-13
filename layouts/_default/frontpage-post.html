@@ -4,20 +4,21 @@
 				<!-- <div class="col-md-offset-1 col-md-10"> -->
 				<div class="col-md-offset-1 col-md-10">
 					<h3><a href="{{.Permalink}}">{{ .Title }}</a></h3>
-						<small><span class="label label-primary">
+						<small>
 							{{ if .Site.Params.strings.date_format }}
 								{{ .Date.Format .Site.Params.strings.date_format }}
 							{{ else }}
 								{{ .Date.Format "Mon, Jan 2, 2006" }}
-							{{ end }}</span>&nbsp;in
+							{{ end }}&nbsp;in
 							{{ range $i, $e :=.Params.categories }}
 								{{if $i}} , {{end}}
 								<a href="/categories/{{ . | urlize }}">{{ . }}</a>
-							{{ end }} using tags
+							{{ end }} <!--using tags
 							{{ range $i, $e :=.Params.tags }}
 								{{if $i}} , {{end}}
 							<a href="/tags/{{ . | urlize }}">{{ . }}</a>
-						{{ end }}
+							{{ end }}
+						</-->
 					</small>
 				</div>
 			</div>

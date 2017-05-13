@@ -3,16 +3,16 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10">
-			<h3>{{ .Title }}</h3>
-				<span class="label label-primary">{{ if .Site.Params.strings.date_format }}{{ .Date.Format .Site.Params.strings.date_format }}{{ else }}{{ .Date.Format "Mon, Jan 2, 2006" }}{{ end }}</span> in 
+			<h1>{{ .Title }}</h1>
+				{{ if .Site.Params.strings.date_format }}{{ .Date.Format .Site.Params.strings.date_format }}{{ else }}{{ .Date.Format "Mon, Jan 2, 2006" }}{{ end }} in
 				{{ range $i, $e :=.Params.categories }}
 					{{if $i}} , {{end}}
 					<a href="/categories/{{ . | urlize }}">{{ . }}</a>
-				{{ end }} using tags
+				{{ end }} <!--> using tags
 				{{ range $i, $e :=.Params.tags }}
 					{{if $i}} , {{end}}
 					<a href="/tags/{{ . | urlize }}">{{ . }}</a>
-				{{ end }}
+				{{ end }} </-->
 			</small>
 		</div>
 	</div>
@@ -20,11 +20,6 @@
 		<div class="col-md-offset-1 col-md-10">
 			<br>
 			{{ .Content }}
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<hr>
 		</div>
 	</div>
 </div>
